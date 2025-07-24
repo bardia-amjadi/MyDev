@@ -14,7 +14,22 @@
 </head>
 <body class="dark-mode">
 
-  <div data-include="./src/html/navbar.html"></div>
+   <nav class="navbar navbar-expand-lg custom-navbar mb-3">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="https://bardia-amjadi.github.io/MyDev/">My Dev</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="باز و بسته کردن منو">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="https://bardia-amjadi.github.io/MyDev/">خانه</a></li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="https://bardia-amjadi.github.io/MyDev/fullstack/">فول استک</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
   <aside id="sidebar" class="p-3">
     <h5 class="mb-3">فهرست مطالب</h5>
