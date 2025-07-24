@@ -189,8 +189,8 @@
     /* Dark mode toggle button */
     #darkModeToggle {
       position: fixed;
-      top: 1rem;
-      left: 1rem;
+      bottom: 1rem;
+      right: 1rem;
       z-index: 1050;
       background-color: var(--primary-color);
       color: white;
