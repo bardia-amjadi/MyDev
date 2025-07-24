@@ -60,17 +60,20 @@
     </header>
     <main>
 
-      <div class="card warning-card text-danger border-danger bg-light my-3 mx-2" id="responsive-warning">
-  <div class="card-header bg-danger text-white fw-bold">
-    ⚠️ توجه
+      <div class="modal fade" id="responsiveWarningModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content warning-modal">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title">⚠️ توجه</h5>
+        </div>
+        <div class="modal-body text-danger">
+          <h6 class="fw-bold">نمایش در صفحه کوچک</h6>
+          <p>به‌دلیل مشکلات ریسپانسیو، لطفاً با کامپیوتر یا لپ‌تاپ وارد وبسایت شوید.</p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="card-body">
-    <h5 class="card-title">نمایش در صفحه کوچک</h5>
-    <p class="card-text">
-      برای تجربه‌ی بهتر، لطفاً با دسکتاپ (با عرض بیشتر از 1565px) وارد شوید.
-    </p>
-  </div>
-</div>
+
 
       
       
@@ -127,6 +130,13 @@
   <script src="./src/js/sidebar.js"></script>
   <script src="./src/js/zoom.js"></script>
   <script src="./src/js/partail.js"></script>
-
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const modal = new bootstrap.Modal(document.getElementById('responsiveWarningModal'));
+      if (window.innerWidth < 1565) {
+        modal.show();
+      }
+    });
+  </script>
 </body>
 </html>
