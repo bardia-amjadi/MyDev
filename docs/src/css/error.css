@@ -1,0 +1,25 @@
+/* پیش‌فرض: کارت مخفی */
+  #responsive-warning {
+    display: none;
+  }
+
+  /* اگر عرض کمتر از 1565px شد → کارت نمایش داده شود */
+  @media (max-width: 1564px) {
+    #responsive-warning {
+      display: block;
+    }
+  }
+
+  /* تم تاریک */
+  @media (prefers-color-scheme: dark) {
+    .warning-card {
+      background-color: #2c2c2c !important;
+      color: #ff6b6b !important;
+      border-color: #ff6b6b !important;
+    }
+
+    .warning-card .card-header {
+      background-color: #ff6b6b !important;
+      color: #1b1b1b !important;
+    }
+  }
