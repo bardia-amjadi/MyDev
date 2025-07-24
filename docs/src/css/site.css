@@ -235,3 +235,35 @@
 #sidebar {
   top: 56px; /* این خط باعث میشه sidebar زیر navbar قرار بگیره */
 }
+.custom-navbar {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  transition: background-color var(--transition-time), border-color var(--transition-time);
+}
+
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link {
+  color: #212529;
+  transition: color var(--transition-time);
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+  color: var(--primary-color);
+}
+
+/* حالت تاریک */
+body.dark-mode .custom-navbar {
+  background-color: #1e1e1e;
+  border-bottom-color: #444;
+}
+
+body.dark-mode .custom-navbar .navbar-brand,
+body.dark-mode .custom-navbar .nav-link {
+  color: #e0e0e0;
+}
+
+body.dark-mode .custom-navbar .nav-link:hover,
+body.dark-mode .custom-navbar .nav-link.active {
+  color: var(--primary-color-light);
+}
