@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Dev - برنامه نویسی فول استک</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+  <link href="../src/css/site.css" rel="stylesheet">
+</head>
+<body class="light-mode">
+
+ <nav class="navbar navbar-expand-lg custom-navbar mb-3">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="https://bardia-amjadi.github.io/MyDev/">My Dev</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="باز و بسته کردن منو">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="https://bardia-amjadi.github.io/MyDev/">خانه</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://bardia-amjadi.github.io/MyDev/fullstack/">فول استک</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="https://bardia-amjadi.github.io/MyDev/csharp">سی شارپ</a>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+ <div class="modal fade" id="responsiveWarningModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content warning-modal">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title">⚠️ توجه</h5>
+        </div>
+        <div class="modal-body text-danger">
+          <h6 class="fw-bold">نمایش در صفحه کوچک</h6>
+          <p>به‌دلیل مشکلات ریسپانسیو، لطفاً با کامپیوتر یا لپ‌تاپ وارد وبسایت شوید.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button id="darkModeToggle" aria-pressed="false" aria-label="تغییر حالت روشن / تاریک">
+    حالت تاریک
+  </button>
+
+  <aside id="sidebar" class="p-3">
+    <h5 class="mb-3">فهرست مطالب</h5>
+    <ul class="nav flex-column">
+    <!-- محیط توسعه -->
+    <li class="nav-item3">
+  <a class="nav-link fw-bold tree-toggle" data-bs-toggle="collapse" href="#vs-section" role="button" aria-expanded="true" aria-controls="vs-section">
+    🧷 سی شارپ
+  </a>
+  <ul class="collapse show list-unstyled ps-3" id="vs-section">
+    <li><a class="nav-link sidebar-link" href="#csharp-intro">معرفی سی شارپ</a></li>
+    <li><a class="nav-link sidebar-link" href="#csharp-variables">متغیرها و انواع داده</a></li>
+    <li><a class="nav-link sidebar-link" href="#csharp-operators">عملگرها</a></li>
+    <li><a class="nav-link sidebar-link" href="#csharp-conditions">شرط‌ها و تصمیم‌گیری</a></li>
+    <li><a class="nav-link sidebar-link" href="#csharp-loops">حلقه‌ها</a></li>
+    <li><a class="nav-link sidebar-link" href="#csharp-arrays-lists">آرایه‌ها و لیست‌ها</a></li>
+    <li>
+      <a class="nav-link fw-bold tree-toggle" data-bs-toggle="collapse" role="button" href="#classes-section" aria-expanded="false" aria-controls="classes-section">
+       شیءگرایی
+      </a>
+      <ul class="collapse list-unstyled ps-3" id="classes-section">
+        <li><a class="nav-link sidebar-link" href="#csharp-methods">متدها و توابع</a></li>
+        <li><a class="nav-link sidebar-link" href="#csharp-classes">کلاس ها</a></li>
+        <li><a class="nav-link sidebar-link" href="#csharp-inheritance">وراثت و چندریختی</a></li>
+        <li><a class="nav-link sidebar-link" href="#csharp-project-sample">پروژه نمونه</a></li>
+      </ul>
+    </li>
+    <li><a class="nav-link sidebar-link" href="#csharp-exceptions">مدیریت خطا و استثناها</a></li>
+    <li><a class="nav-link sidebar-link" href="#csharp-linq-lambda">Lambda و LINQ</a></li>
+    <li><a class="nav-link sidebar-link" href="#csharp-file-io">فایل و ورودی/خروجی</a></li>
+  </ul>
+</li>
+
+
+
+    <!-- بک‌اند -->
+    <li class="nav-item mt-3">
+      <a class="nav-link fw-bold tree-toggle" data-bs-toggle="collapse" href="#backend-section" role="button" aria-expanded="false" aria-controls="backend-section">
+        ⚙️ ASP.NET Core
+      </a>
+      <ul class="collapse list-unstyled ps-3" id="backend-section">
+        <li><a class="nav-link sidebar-link" href="#backend-create">طریقه ساخت</a></li>
+        <li><a class="nav-link sidebar-link" href="#backend-docker-connection">اتصال به داکر</a></li>
+        <li><a class="nav-link sidebar-link" href="#backend-migrate">Migrate</a></li>
+        <li><a class="nav-link sidebar-link" href="#backend-auto-migrate">Auto Migrate</a></li>
+        <li><a class="nav-link sidebar-link" href="#backend-manual-migrate">Manual Migrate</a></li>
+      </ul>
+    </li>
+
+    <!-- دیتابیس -->
+    <li class="nav-item mt-3">
+      <a class="nav-link fw-bold tree-toggle" data-bs-toggle="collapse" href="#database-section" role="button" aria-expanded="false" aria-controls="database-section">
+        🗄️ دیتابیس
+      </a>
+      <ul class="collapse list-unstyled ps-3" id="database-section">
+        <li><a class="nav-link sidebar-link" href="#database-docker-connection">اتصال به داکر</a></li>
+        <li><a class="nav-link sidebar-link" href="#database-add-dependencies">اضافه کردن Dependencies</a></li>
+        <li><a class="nav-link sidebar-link" href="#database-mssql-connection">اتصال از طریق SQL Server Management</a></li>
+      </ul>
+    </li>
+    </ul>
+  </aside>
+
+
+  <main id="content" tabindex="-1">
+
+
+  <section id="csharp-intro" tabindex="0">
+  <h2>C# - معرفی</h2>
+  <p>C# یک زبان برنامه‌نویسی شیءگرا و قدرتمند از مایکروسافت است که روی پلتفرم .NET اجرا می‌شود. این زبان برای توسعه برنامه‌های دسکتاپ، وب، موبایل و بازی‌ها استفاده می‌شود. C# ترکیبی از سادگی و قابلیت‌های پیشرفته است و یادگیری آن به برنامه‌نویسان کمک می‌کند تا برنامه‌های حرفه‌ای بسازند.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">// نمونه برنامه ساده C#
+using System;
+
+class Program {
+    static void Main() {
+        Console.WriteLine("سلام! به دنیای C# خوش آمدید");
+    }
+}
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 1 : نمونه برنامه Hello World در C#</figcaption>
+  </figure>
+</section>
+
+<section id="csharp-variables" tabindex="0">
+  <h2>متغیرها و انواع داده</h2>
+  <p>متغیرها محل نگهداری داده‌ها هستند و هر متغیر یک نوع داده دارد، مثل عدد صحیح، رشته، یا بولین. C# انواع داده مختلفی دارد: int, float, double, bool, string و غیره.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">// تعریف متغیرها در C#
+int age = 19;
+double price = 99.95;
+bool isActive = true;
+string name = "Bardia";
+
+Console.WriteLine($"نام: {name}, سن: {age}, قیمت: {price}, فعال: {isActive}");
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 2 : تعریف و استفاده از متغیرها</figcaption>
+  </figure>
+</section>
+
+<section id="csharp-operators" tabindex="0">
+  <h2>عملگرها</h2>
+  <p>C# انواع مختلفی از عملگرها دارد: ریاضی، منطقی، مقایسه‌ای و ترکیبی. این عملگرها برای محاسبات و شرط‌ها استفاده می‌شوند.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">int a = 10, b = 5;
+
+// عملگرهای ریاضی
+Console.WriteLine(a + b); // جمع
+Console.WriteLine(a - b); // تفریق
+Console.WriteLine(a * b); // ضرب
+Console.WriteLine(a / b); // تقسیم
+
+// عملگرهای منطقی و مقایسه
+bool result = (a > b) && (b > 0);
+Console.WriteLine(result);
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 3 : استفاده از عملگرها در C#</figcaption>
+  </figure>
+</section>
+
+<section id="csharp-conditions" tabindex="0">
+  <h2>شرط‌ها و تصمیم‌گیری</h2>
+  <p>برای تصمیم‌گیری در برنامه از ساختارهای شرطی مثل if، else و switch استفاده می‌کنیم.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">int score = 85;
+
+if (score >= 90) {
+    Console.WriteLine("عالی");
+} else if (score >= 70) {
+    Console.WriteLine("خوب");
+} else {
+    Console.WriteLine("نیاز به تمرین بیشتر");
+}
+
+// switch
+string grade = "B";
+switch (grade) {
+    case "A": Console.WriteLine("عالی"); break;
+    case "B": Console.WriteLine("خوب"); break;
+    default: Console.WriteLine("نیاز به تلاش بیشتر"); break;
+}
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 4 : شرط‌ها در C#</figcaption>
+  </figure>
+</section>
+
+<section id="csharp-loops" tabindex="0">
+  <h2>حلقه‌ها</h2>
+  <p>حلقه‌ها برای تکرار دستورات استفاده می‌شوند. مهم‌ترین آن‌ها: for, while, foreach.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">// for loop
+for(int i = 1; i <= 5; i++) {
+    Console.WriteLine(i);
+}
+
+// while loop
+int j = 1;
+while(j <= 5) {
+    Console.WriteLine(j);
+    j++;
+}
+
+// foreach loop
+string[] fruits = {"سیب", "موز", "هندوانه"};
+foreach(string f in fruits) {
+    Console.WriteLine(f);
+}
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 5 : حلقه‌ها در C#</figcaption>
+  </figure>
+</section>
+
+<section id="csharp-arrays-lists" tabindex="0">
+  <h2>آرایه‌ها و لیست‌ها</h2>
+  <p>آرایه‌ها و لیست‌ها برای نگهداری مجموعه‌ای از داده‌ها استفاده می‌شوند. آرایه اندازه ثابت دارد و List اندازه‌پذیر است.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">// آرایه
+int[] numbers = {1,2,3,4,5};
+Console.WriteLine(numbers[2]); // 3
+
+// لیست
+using System.Collections.Generic;
+List<string> names = new List<string>() {"Ali","Sara","Reza"};
+names.Add("Bardia");
+Console.WriteLine(names[3]); // Bardia
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 6 : آرایه و لیست در C#</figcaption>
+  </figure>
+</section>
+
+<section id="csharp-methods" tabindex="0">
+  <h2>متدها و توابع</h2>
+  <p>متدها کدهای قابل استفاده مجدد هستند که یک وظیفه مشخص انجام می‌دهند. می‌توانند ورودی (پارامتر) و خروجی (return) داشته باشند.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">int Add(int x, int y) {
+    return x + y;
+}
+
+int sum = Add(5, 10);
+Console.WriteLine(sum); // 15
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 7 : تعریف و استفاده از متدها</figcaption>
+  </figure>
+</section>
+
+<section id="csharp-classes" tabindex="0">
+  <h2>کلاس‌ها و شیءگرایی</h2>
+  <p>C# زبان شیءگراست و برنامه‌ها حول کلاس‌ها و اشیاء ساخته می‌شوند. کلاس یک قالب است و شیء نمونه‌ای از کلاس است.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">class Person {
+    public string Name;
+    public int Age;
+
+    public void SayHello() {
+        Console.WriteLine($"سلام من {Name} هستم و {Age} سال دارم");
+    }
+}
+
+Person p = new Person();
+p.Name = "Bardia";
+p.Age = 19;
+p.SayHello();
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 8 : کلاس و شیء در C#</figcaption>
+  </figure>
+</section>
+
+<section id="csharp-inheritance" tabindex="0">
+  <h2>وراثت و چندریختی</h2>
+  <p>وراثت به کلاس‌ها اجازه می‌دهد ویژگی‌ها و متدهای کلاس دیگر را به ارث ببرند. چندریختی (Polymorphism) امکان استفاده از یک متد به روش‌های مختلف را فراهم می‌کند.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">class Animal {
+    public virtual void Speak() {
+        Console.WriteLine("صدا");
+    }
+}
+
+class Dog : Animal {
+    public override void Speak() {
+        Console.WriteLine("حیوان: سگ پارس می‌کند");
+    }
+}
+
+Animal a = new Dog();
+a.Speak(); // حیوان: سگ پارس می‌کند
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 9 : وراثت و چندریختی</figcaption>
+  </figure>
+</section>
+
+<section id="csharp-project-sample" tabindex="0">
+  <h2>پروژه نمونه</h2>
+  <p>مثال: یک برنامه مدیریت ساده افراد با کلاس و لیست</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">class Person {
+    public string Name;
+    public int Age;
+}
+
+List&lt;Person&gt; people = new List&lt;Person&gt;() {
+    new Person() { Name="Ali", Age=20 },
+    new Person() { Name="Sara", Age=25 }
+};
+
+people.Add(new Person() { Name="Bardia", Age=19 });
+
+foreach(var p in people) {
+    Console.WriteLine($"{p.Name} - {p.Age}");
+}
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 13 : پروژه نمونه مدیریت افراد</figcaption>
+  </figure>
+</section>
+
+
+
+<section id="csharp-exceptions" tabindex="0">
+  <h2>مدیریت خطا و استثناها</h2>
+  <p>برای مدیریت خطاها در برنامه از try, catch, finally استفاده می‌کنیم.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">try {
+    int x = 10;
+    int y = 0;
+    Console.WriteLine(x/y);
+} catch(DivideByZeroException ex) {
+    Console.WriteLine("تقسیم بر صفر امکان‌پذیر نیست!");
+} finally {
+    Console.WriteLine("برنامه به پایان رسید");
+}
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 10 : مدیریت خطا در C#</figcaption>
+  </figure>
+</section>
+
+<section id="csharp-linq-lambda" tabindex="0">
+  <h2>Lambda و LINQ</h2>
+  <p>Lambda و LINQ ابزارهای قدرتمند C# برای کار با مجموعه‌ها هستند. Lambda توابع کوتاه و ناشناس می‌سازد و LINQ پرس و جوهای ساده روی داده‌ها انجام می‌دهد.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">using System.Linq;
+
+int[] numbers = {1,2,3,4,5,6};
+var evenNumbers = numbers.Where(n => n % 2 == 0).ToList();
+
+foreach(var n in evenNumbers) {
+    Console.WriteLine(n); // 2,4,6
+}
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 11 : Lambda و LINQ در C#</figcaption>
+  </figure>
+</section>
+
+<section id="csharp-file-io" tabindex="0">
+  <h2>فایل و ورودی/خروجی</h2>
+  <p>برای خواندن و نوشتن فایل‌ها از کلاس‌های System.IO استفاده می‌کنیم.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">using System.IO;
+
+// نوشتن در فایل
+File.WriteAllText("example.txt", "سلام C#");
+
+// خواندن از فایل
+string content = File.ReadAllText("example.txt");
+Console.WriteLine(content);
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 12 : خواندن و نوشتن فایل</figcaption>
+  </figure>
+</section>
+
+
+  </main>
+
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content bg-dark border-0">
+      <div class="modal-body p-0 position-relative">
+        <div class="zoom-container overflow-auto" style="max-height: 90vh;">
+          <img id="modalImage" src="" class="zoom-image d-block mx-auto" style="max-width: 100%; transition: transform 0.3s ease;">
+        </div>
+        <button type="button" class="btn btn-light position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="بستن">×</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../src/js/sidebar.js"></script>
+  <script src="../src/js/zoom.js"></script>
+  <script src="../src/js/partail.js"></script>
+  <script src="../src/js/error.js"></script>
+<!-- Prism CSS -->
+<link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css" rel="stylesheet" />
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-csharp.min.js"></script>
+
+</body>
+</html>
