@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Dev - ASP.NET Core</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+  <link href="../src/css/site.css" rel="stylesheet">
+</head>
+<body class="light-mode">
+
+ <nav class="navbar navbar-expand-lg custom-navbar mb-3">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="https://bardia-amjadi.github.io/MyDev/">My Dev</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="باز و بسته کردن منو">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="https://bardia-amjadi.github.io/MyDev/">خانه</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://bardia-amjadi.github.io/MyDev/fullstack/">Fullstack</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://bardia-amjadi.github.io/MyDev/csharp">C#</a>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="https://bardia-amjadi.github.io/MyDev/csharp">ASP.NET Core</a>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+ <div class="modal fade" id="responsiveWarningModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content warning-modal">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title">⚠️ توجه</h5>
+        </div>
+        <div class="modal-body text-danger">
+          <h6 class="fw-bold">نمایش در صفحه کوچک</h6>
+          <p>به‌دلیل مشکلات ریسپانسیو، لطفاً با کامپیوتر یا لپ‌تاپ وارد وبسایت شوید.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button id="darkModeToggle" aria-pressed="false" aria-label="تغییر حالت روشن / تاریک">
+    حالت تاریک
+  </button>
+  <aside id="sidebar" class="p-3">
+    <h5 class="mb-3">فهرست مطالب ASP.NET</h5>
+    <ul class="nav flex-column">
+
+        <!-- معرفی -->
+        <li class="nav-item">
+            <a class="nav-link fw-bold tree-toggle" data-bs-toggle="collapse" href="#aspnet-intro-section" role="button" aria-expanded="false" aria-controls="aspnet-intro-section">
+                🌐 معرفی ASP.NET
+            </a>
+            <ul class="collapse list-unstyled ps-3" id="aspnet-intro-section">
+                <li><a class="nav-link sidebar-link" href="#aspnet-intro">ASP.NET - معرفی</a></li>
+                <li><a class="nav-link sidebar-link" href="#aspnet-variables">متغیرها و داده‌ها</a></li>
+                <li><a class="nav-link sidebar-link" href="#aspnet-conditions">شرط‌ها</a></li>
+                <li><a class="nav-link sidebar-link" href="#aspnet-loops">حلقه‌ها</a></li>
+                <li><a class="nav-link sidebar-link" href="#aspnet-forms">فرم‌ها و دریافت داده‌ها</a></li>
+                <li><a class="nav-link sidebar-link" href="#aspnet-routing">مسیر‌یابی (Routing)</a></li>
+            </ul>
+        </li>
+
+        <!-- Dependency Injection -->
+        <li class="nav-item mt-3">
+            <a class="nav-link fw-bold tree-toggle" data-bs-toggle="collapse" href="#aspnet-di-section" role="button" aria-expanded="false" aria-controls="aspnet-di-section">
+                ⚙️ Dependency Injection
+            </a>
+            <ul class="collapse list-unstyled ps-3" id="aspnet-di-section">
+                <li><a class="nav-link sidebar-link" href="#aspnet-di">DI در ASP.NET</a></li>
+            </ul>
+        </li>
+
+        <!-- EF Core -->
+        <li class="nav-item mt-3">
+            <a class="nav-link fw-bold tree-toggle" data-bs-toggle="collapse" href="#aspnet-efcore-section" role="button" aria-expanded="false" aria-controls="aspnet-efcore-section">
+                🗄️ Entity Framework Core
+            </a>
+            <ul class="collapse list-unstyled ps-3" id="aspnet-efcore-section">
+                <li><a class="nav-link sidebar-link" href="#aspnet-efcore">EF Core در ASP.NET</a></li>
+            </ul>
+        </li>
+
+        <!-- Middleware -->
+        <li class="nav-item mt-3">
+            <a class="nav-link fw-bold tree-toggle" data-bs-toggle="collapse" href="#aspnet-middleware-section" role="button" aria-expanded="false" aria-controls="aspnet-middleware-section">
+                🧩 Middleware
+            </a>
+            <ul class="collapse list-unstyled ps-3" id="aspnet-middleware-section">
+                <li><a class="nav-link sidebar-link" href="#aspnet-middleware">Middleware در ASP.NET</a></li>
+            </ul>
+        </li>
+
+        <!-- Web API -->
+        <li class="nav-item mt-3">
+            <a class="nav-link fw-bold tree-toggle" data-bs-toggle="collapse" href="#aspnet-webapi-section" role="button" aria-expanded="false" aria-controls="aspnet-webapi-section">
+                🔌 Web API
+            </a>
+            <ul class="collapse list-unstyled ps-3" id="aspnet-webapi-section">
+                <li><a class="nav-link sidebar-link" href="#aspnet-webapi">ایجاد Web API</a></li>
+            </ul>
+        </li>
+
+        <!-- Identity -->
+        <li class="nav-item mt-3">
+            <a class="nav-link fw-bold tree-toggle" data-bs-toggle="collapse" href="#aspnet-identity-section" role="button" aria-expanded="false" aria-controls="aspnet-identity-section">
+                🔑 Identity و احراز هویت
+            </a>
+            <ul class="collapse list-unstyled ps-3" id="aspnet-identity-section">
+                <li><a class="nav-link sidebar-link" href="#aspnet-identity">ASP.NET Identity</a></li>
+            </ul>
+        </li>
+
+        <!-- Blazor -->
+        <li class="nav-item mt-3">
+            <a class="nav-link fw-bold tree-toggle" data-bs-toggle="collapse" href="#aspnet-blazor-section" role="button" aria-expanded="false" aria-controls="aspnet-blazor-section">
+                ⚡ Blazor و Razor Components
+            </a>
+            <ul class="collapse list-unstyled ps-3" id="aspnet-blazor-section">
+                <li><a class="nav-link sidebar-link" href="#aspnet-blazor">نمونه Blazor Component</a></li>
+            </ul>
+        </li>
+
+        <!-- Performance و Security -->
+        <li class="nav-item mt-3">
+            <a class="nav-link fw-bold tree-toggle" data-bs-toggle="collapse" href="#aspnet-advanced-section" role="button" aria-expanded="false" aria-controls="aspnet-advanced-section">
+                🚀 پیشرفته
+            </a>
+            <ul class="collapse list-unstyled ps-3" id="aspnet-advanced-section">
+                <li><a class="nav-link sidebar-link" href="#aspnet-performance">Performance و بهینه‌سازی</a></li>
+                <li><a class="nav-link sidebar-link" href="#aspnet-caching">Caching</a></li>
+                <li><a class="nav-link sidebar-link" href="#aspnet-security">Security</a></li>
+                <li><a class="nav-link sidebar-link" href="#aspnet-advanced-routing">Advanced Routing</a></li>
+                <li><a class="nav-link sidebar-link" href="#aspnet-logging">Logging و مانیتورینگ</a></li>
+            </ul>
+        </li>
+
+    </ul>
+</aside>
+  
+
+
+  <main id="content" tabindex="-1">
+
+<section id="aspnet-intro" tabindex="0">
+  <h2>ASP.NET - معرفی</h2>
+  <p>ASP.NET یک فریم‌ورک وب از مایکروسافت است که برای ساخت برنامه‌ها و وب‌سایت‌های دینامیک استفاده می‌شود. این فریم‌ورک روی .NET اجرا می‌شود و از زبان‌هایی مثل C# و VB.NET پشتیبانی می‌کند. ASP.NET امکاناتی مثل MVC، Web API و Blazor را ارائه می‌دهد.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">
+// نمونه یک صفحه ساده ASP.NET
+using System;
+using Microsoft.AspNetCore.Mvc;
+
+namespace MyWebApp.Controllers
+{
+    public class HomeController : Controller
+    {
+        public IActionResult Index()
+        {
+            ViewBag.Message = "سلام! به دنیای ASP.NET خوش آمدید";
+            return View();
+        }
+    }
+}
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 1 : نمونه کنترلر ساده ASP.NET</figcaption>
+  </figure>
+</section>
+
+<section id="aspnet-variables" tabindex="0">
+  <h2>متغیرها و داده‌ها در ASP.NET</h2>
+  <p>در ASP.NET می‌توان از متغیرها برای ذخیره داده‌ها در کنترلرها و صفحات وب استفاده کرد. انواع داده‌ها همانند C# هستند: int, double, string, bool و غیره.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">
+// استفاده از متغیر در کنترلر
+public IActionResult Info()
+{
+    string name = "Bardia";
+    int age = 19;
+    ViewBag.Info = $"نام: {name}, سن: {age}";
+    return View();
+}
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 2 : متغیرها در ASP.NET</figcaption>
+  </figure>
+</section>
+
+<section id="aspnet-conditions" tabindex="0">
+  <h2>شرط‌ها در ASP.NET</h2>
+  <p>برای تصمیم‌گیری در منطق برنامه می‌توان از if، else و switch استفاده کرد. این شرط‌ها معمولاً در کنترلرها یا Razor Pages نوشته می‌شوند.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">
+// مثال شرطی در کنترلر
+public IActionResult Grade(int score)
+{
+    string result;
+    if(score >= 90) result = "عالی";
+    else if(score >= 70) result = "خوب";
+    else result = "نیاز به تمرین بیشتر";
+
+    ViewBag.Grade = result;
+    return View();
+}
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 3 : استفاده از شرط‌ها در ASP.NET</figcaption>
+  </figure>
+</section>
+
+<section id="aspnet-loops" tabindex="0">
+  <h2>حلقه‌ها در ASP.NET</h2>
+  <p>حلقه‌ها برای تکرار داده‌ها یا پردازش مجموعه‌ای از داده‌ها استفاده می‌شوند. معمولاً در Razor Pages برای نمایش لیست‌ها کاربرد دارند.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">
+@* در Razor Page *@
+@{
+    string[] fruits = {"سیب", "موز", "هندوانه"};
+}
+
+&lt;ul&gt;
+@foreach(var f in fruits)
+{
+    &lt;li&gt;@f&lt;/li&gt;
+}
+&lt;/ul&gt;
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 4 : حلقه foreach در Razor</figcaption>
+  </figure>
+</section>
+
+<section id="aspnet-forms" tabindex="0">
+  <h2>فرم‌ها و دریافت داده‌ها</h2>
+  <p>با استفاده از فرم‌ها می‌توان داده‌ها را از کاربر دریافت و در کنترلر پردازش کرد.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">
+@* فرم ساده Razor *@
+&lt;form method="post" asp-action="SubmitForm"&gt;
+    &lt;input type="text" name="username" placeholder="نام کاربری" /&gt;
+    &lt;input type="submit" value="ارسال" /&gt;
+&lt;/form&gt;
+
+@* کنترلر مربوطه *@
+[HttpPost]
+public IActionResult SubmitForm(string username)
+{
+    ViewBag.Message = $"سلام {username}!";
+    return View("Index");
+}
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 5 : فرم و دریافت داده در ASP.NET</figcaption>
+  </figure>
+</section>
+
+<section id="aspnet-routing" tabindex="0">
+  <h2>مسیر‌یابی (Routing) در ASP.NET</h2>
+  <p>Routing تعیین می‌کند که درخواست‌های URL به کدام کنترلر و اکشن هدایت شوند. مسیرها می‌توانند با پارامترها دینامیک باشند.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">
+// مثال مسیر در Startup.cs
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 6 : تنظیم مسیر پیش‌فرض در ASP.NET</figcaption>
+  </figure>
+</section>
+
+<section id="aspnet-di" tabindex="0">
+  <h2>Dependency Injection (DI) در ASP.NET</h2>
+  <p>Dependency Injection یک الگوی طراحی است که به ما اجازه می‌دهد وابستگی‌ها (Dependencies) را از بیرون کلاس‌ها به آن‌ها تزریق کنیم و وابستگی‌ها را مدیریت کنیم. این کار باعث کاهش Coupling و افزایش تست‌پذیری می‌شود.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">
+// ثبت سرویس در Program.cs
+builder.Services.AddScoped&lt;IMyService, MyService&gt;();
+
+// استفاده در کنترلر
+public class HomeController : Controller
+{
+    private readonly IMyService _service;
+
+    public HomeController(IMyService service)
+    {
+        _service = service;
+    }
+
+    public IActionResult Index()
+    {
+        var data = _service.GetData();
+        return View(data);
+    }
+}
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 1 : استفاده از DI در ASP.NET</figcaption>
+  </figure>
+</section>
+
+<section id="aspnet-efcore" tabindex="0">
+  <h2>Entity Framework Core</h2>
+  <p>EF Core ORM قدرتمندی است که اجازه می‌دهد با پایگاه داده به صورت شیءگرا کار کنیم. با Code First یا Database First می‌توان مدل‌ها را تعریف کرد.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">
+// مدل
+public class Product
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public decimal Price { get; set; }
+}
+
+// DbContext
+public class AppDbContext : DbContext
+{
+    public DbSet&lt;Product&gt; Products { get; set; }
+}
+
+// استفاده در کنترلر
+public class ProductsController : Controller
+{
+    private readonly AppDbContext _context;
+    public ProductsController(AppDbContext context) =&gt; _context = context;
+
+    public IActionResult Index()
+    {
+        var products = _context.Products.ToList();
+        return View(products);
+    }
+}
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 2 : EF Core در ASP.NET</figcaption>
+  </figure>
+</section>
+
+<section id="aspnet-middleware" tabindex="0">
+  <h2>Middleware در ASP.NET</h2>
+  <p>Middleware لایه‌های پردازشی بین درخواست و پاسخ هستند که می‌توانند لاگ، احراز هویت، خطایابی و دیگر پردازش‌ها را انجام دهند.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">
+// نمونه Middleware ساده
+public class RequestLoggingMiddleware
+{
+    private readonly RequestDelegate _next;
+
+    public RequestLoggingMiddleware(RequestDelegate next)
+    {
+        _next = next;
+    }
+
+    public async Task InvokeAsync(HttpContext context)
+    {
+        Console.WriteLine($"Request: {context.Request.Path}");
+        await _next(context);
+    }
+}
+
+// ثبت در Program.cs
+app.UseMiddleware&lt;RequestLoggingMiddleware&gt;();
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 3 : ایجاد و استفاده از Middleware</figcaption>
+  </figure>
+</section>
+
+<section id="aspnet-webapi" tabindex="0">
+  <h2>ASP.NET Web API</h2>
+  <p>با Web API می‌توان سرویس‌های RESTful ایجاد کرد و داده‌ها را به صورت JSON یا XML در اختیار کلاینت‌ها قرار داد.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">
+[Route("api/[controller]")]
+[ApiController]
+public class ProductsApiController : ControllerBase
+{
+    private readonly AppDbContext _context;
+    public ProductsApiController(AppDbContext context) =&gt; _context = context;
+
+    [HttpGet]
+    public IActionResult GetAll() =&gt; Ok(_context.Products.ToList());
+
+    [HttpPost]
+    public IActionResult Create(Product product)
+    {
+        _context.Products.Add(product);
+        _context.SaveChanges();
+        return CreatedAtAction(nameof(GetAll), new { id = product.Id }, product);
+    }
+}
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 4 : ایجاد Web API با ASP.NET</figcaption>
+  </figure>
+</section>
+
+<section id="aspnet-identity" tabindex="0">
+  <h2>Identity و احراز هویت</h2>
+  <p>ASP.NET Identity برای مدیریت کاربران، نقش‌ها و احراز هویت استفاده می‌شود و امنیت وب‌سایت را تضمین می‌کند.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">
+// ثبت Identity در Program.cs
+builder.Services.AddIdentity&lt;ApplicationUser, IdentityRole&gt;()
+    .AddEntityFrameworkStores&lt;AppDbContext&gt;();
+
+// مثال لاگین
+public async Task&lt;IActionResult&gt; Login(LoginViewModel model)
+{
+    var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, false, false);
+    if(result.Succeeded) return RedirectToAction("Index", "Home");
+    return View(model);
+}
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 5 : استفاده از ASP.NET Identity</figcaption>
+  </figure>
+</section>
+
+<section id="aspnet-blazor" tabindex="0">
+  <h2>Blazor و Razor Components</h2>
+  <p>Blazor اجازه می‌دهد UI وب را با C# و Razor Component بسازیم بدون نیاز به جاوااسکریپت. می‌توان کامپوننت‌ها را به صورت Reusable ساخت.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">
+@* نمونه Blazor Component *@
+&lt;h3&gt;سلام @Name!&lt;/h3&gt;
+
+@code {
+    [Parameter]
+    public string Name { get; set; } = "کاربر";
+}
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 6 : نمونه Blazor Component</figcaption>
+  </figure>
+</section>
+<section id="aspnet-performance" tabindex="0">
+  <h2>Performance و بهینه‌سازی</h2>
+  <p>برای بهبود عملکرد وب‌سایت ASP.NET می‌توان از روش‌های مختلفی مثل Minification، Bundling، Lazy Loading و Asynchronous Programming استفاده کرد.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">
+// مثال استفاده از Async در کنترلر
+public async Task&lt;IActionResult&gt; GetProductsAsync()
+{
+    var products = await _context.Products.ToListAsync();
+    return View(products);
+}
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 1 : استفاده از Async برای افزایش Performance</figcaption>
+  </figure>
+</section>
+
+<section id="aspnet-caching" tabindex="0">
+  <h2>Caching در ASP.NET</h2>
+  <p>Caching باعث می‌شود داده‌ها در حافظه ذخیره شوند و دسترسی به آن‌ها سریع‌تر انجام شود. ASP.NET از MemoryCache و ResponseCache پشتیبانی می‌کند.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">
+// Cache کردن داده‌ها
+[ResponseCache(Duration = 60)]
+public IActionResult Index()
+{
+    var products = _context.Products.ToList();
+    return View(products);
+}
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 2 : استفاده از ResponseCache</figcaption>
+  </figure>
+</section>
+
+<section id="aspnet-security" tabindex="0">
+  <h2>Security و محافظت از وب‌سایت</h2>
+  <p>امنیت در ASP.NET شامل استفاده از HTTPS، Anti-Forgery Tokens، Authorization و Data Validation می‌شود تا وب‌سایت در برابر حملات محافظت شود.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">
+// استفاده از Anti-Forgery در فرم‌ها
+&lt;form asp-action="SubmitForm" method="post"&gt;
+    @Html.AntiForgeryToken()
+    &lt;input type="text" name="username" /&gt;
+    &lt;input type="submit" value="ارسال" /&gt;
+&lt;/form&gt;
+
+// کنترلر
+[ValidateAntiForgeryToken]
+[HttpPost]
+public IActionResult SubmitForm(string username)
+{
+    ViewBag.Message = $"سلام {username}";
+    return View("Index");
+}
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 3 : استفاده از Anti-Forgery Token</figcaption>
+  </figure>
+</section>
+
+<section id="aspnet-advanced-routing" tabindex="0">
+  <h2>Advanced Routing</h2>
+  <p>مسیر‌یابی پیشرفته اجازه می‌دهد URLها منعطف و قابل خواندن باشند و پارامترهای Optional یا Constraints داشته باشند.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">
+// مسیر پیشرفته با Constraint
+app.MapControllerRoute(
+    name: "product",
+    pattern: "Products/{id:int:min(1)}",
+    defaults: new { controller = "Products", action = "Details" }
+);
+
+// Optional Parameter
+app.MapControllerRoute(
+    name: "blog",
+    pattern: "Blog/{year:int?}/{month:int?}",
+    defaults: new { controller = "Blog", action = "Archive" }
+);
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 4 : مسیر‌یابی پیشرفته در ASP.NET</figcaption>
+  </figure>
+</section>
+
+<section id="aspnet-logging" tabindex="0">
+  <h2>Logging و مانیتورینگ</h2>
+  <p>Logging برای بررسی خطاها و رفتار برنامه ضروری است. ASP.NET Core از ILogger و Serilog پشتیبانی می‌کند.</p>
+  <figure class="text-center my-4">
+    <pre><code class="language-csharp">
+// نمونه Logging در کنترلر
+private readonly ILogger&lt;HomeController&gt; _logger;
+
+public HomeController(ILogger&lt;HomeController&gt; logger)
+{
+    _logger = logger;
+}
+
+public IActionResult Index()
+{
+    _logger.LogInformation("صفحه اصلی بارگذاری شد.");
+    return View();
+}
+    </code></pre>
+    <figcaption class="mt-2 text-muted">شکل 5 : استفاده از ILogger برای Logging</figcaption>
+  </figure>
+</section>
+
+
+  </main>
+
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content bg-dark border-0">
+      <div class="modal-body p-0 position-relative">
+        <div class="zoom-container overflow-auto" style="max-height: 90vh;">
+          <img id="modalImage" src="" class="zoom-image d-block mx-auto" style="max-width: 100%; transition: transform 0.3s ease;">
+        </div>
+        <button type="button" class="btn btn-light position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="بستن">×</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../src/js/sidebar.js"></script>
+  <script src="../src/js/zoom.js"></script>
+  <script src="../src/js/partail.js"></script>
+  <script src="../src/js/error.js"></script>
+  <!-- Prism CSS (مثل VS Code theme) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+<!-- Prism JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js"></script>
+
+<!-- اضافه کردن زبان‌ها -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-csharp.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-bash.min.js"></script>
+<script src="https://cdnjs.
+
+</body>
+</html>
