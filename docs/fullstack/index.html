@@ -19,9 +19,8 @@
     <div class="collapse navbar-collapse" id="mainNavbar">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link" href="https://bardia-amjadi.github.io/MyDev/">خانه</a></li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="https://bardia-amjadi.github.io/MyDev/fullstack/">فول استک</a>
-        </li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="https://bardia-amjadi.github.io/MyDev/fullstack/">فول استک</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://bardia-amjadi.github.io/MyDev/csharp">سی شارپ</a>
       </ul>
     </div>
   </div>
@@ -174,14 +173,14 @@
     <h2>داکر - دستورات</h2>
     <p>این‌ها دستورات مهم و پرکاربرد Docker Compose هستن که معمولاً استفاده می‌شن:</p>
     <ul>
-      <li><code>docker-compose up</code><br/> همه سرویس‌ها رو اجرا می‌کنه (اگه تصویر موجود نباشه، می‌سازه).</li>
-      <li><code>docker-compose up -d</code><br/> سرویس‌ها رو در پس‌زمینه (Detached mode) اجرا می‌کنه.</li>
-      <li><code>docker-compose down</code><br/> همه کانتینرها، شبکه‌ها و منابع ساخته شده توسط Compose رو متوقف و حذف می‌کنه.</li>
-      <li><code>docker-compose build</code><br/> تصاویر داکر رو طبق Dockerfile ها می‌سازه.</li>
-      <li><code>docker-compose stop</code><br/> فقط کانتینرها رو متوقف می‌کنه، حذف نمی‌کنه.</li>
-      <li><code>docker-compose restart</code><br/> کانتینرها رو ریستارت می‌کنه.</li>
-      <li><code>docker-compose logs</code><br/> لاگ خروجی کانتینرها رو نمایش می‌ده.</li>
-      <li><code>docker-compose ps</code><br/> لیست کانتینرهای در حال اجرا رو نشون می‌ده.</li>
+      <li><pre><code class="language-batch" >docker-compose up</code></pre><br/> همه سرویس‌ها رو اجرا می‌کنه (اگه تصویر موجود نباشه، می‌سازه).</li>
+      <li><pre><code class="language-batch" >docker-compose up -d</code></pre><br/> سرویس‌ها رو در پس‌زمینه (Detached mode) اجرا می‌کنه.</li>
+      <li><pre><code class="language-batch" >docker-compose down</code></pre><br/> همه کانتینرها، شبکه‌ها و منابع ساخته شده توسط Compose رو متوقف و حذف می‌کنه.</li>
+      <li><pre><code class="language-batch" >docker-compose build</code></pre><br/> تصاویر داکر رو طبق Dockerfile ها می‌سازه.</li>
+      <li><pre><code class="language-batch" >docker-compose stop</code></pre><br/> فقط کانتینرها رو متوقف می‌کنه، حذف نمی‌کنه.</li>
+      <li><pre><code class="language-batch" >docker-compose restart</code></pre><br/> کانتینرها رو ریستارت می‌کنه.</li>
+      <li><pre><code class="language-batch" >docker-compose logs</code></pre><br/> لاگ خروجی کانتینرها رو نمایش می‌ده.</li>
+      <li><pre><code class="language-batch" >docker-compose ps</code></pre><br/> لیست کانتینرهای در حال اجرا رو نشون می‌ده.</li>
     </ul>
     <p>این‌ها پایه‌ای‌ترین‌ها هستن که هر روز باهاشون کار می‌کنیم.</p>
   </section>
@@ -270,7 +269,7 @@
             <figcaption class="mt-2 text-muted">نکته :
             این یک Docker-Compose خالی هست</figcaption>
           </figure>
-      <pre><code>services:
+      <pre><code class="language-yaml" >services:
 
 networks:
   mynetwork:
@@ -282,7 +281,7 @@ networks:
             <img src="../src/img/docker-compose-3.png" alt="داکر کامپوز" class="img-fluid rounded shadow" style="max-width: 100%; height: auto;">
             <figcaption class="mt-2 text-muted">شکل 7 : Docker Compose</figcaption>
           </figure>
-      <pre><code>services:
+      <pre><code class="language-yaml">services:
   {PrpjectName}:
     build:
       context: .
@@ -306,7 +305,7 @@ volumes:
             <img src="../src/img/dockerfile-2.png" alt="داکر فایل" class="img-fluid rounded shadow" style="max-width: 100%; height: auto;">
             <figcaption class="mt-2 text-muted">شکل 8 : Dockerfile</figcaption>
           </figure>
-      <pre><code># Base image
+      <pre><code class="language-docker"># Base image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
 EXPOSE 8080
@@ -343,7 +342,7 @@ ENTRYPOINT ["dotnet", "{ProjectName}.dll"]
       <p>برای نصب Entityframework کافیه دستور زیر رو توی کنسول تایپ کنید :</p>
       <pre><code>dotnet tool install --global dotnet-ef</code></pre>
       <p>برای ایجاد یک مایگریشن جدید، از دستور زیر در کنسول استفاده کنید:</p>
-      <pre><code>dotnet ef migrations add {Name}</code></pre>
+      <pre><code class="language-powershell">dotnet ef migrations add {Name}</code></pre>
        <figure class="text-center my-4">
             <img src="../src/img/migration.png" alt="migration" class="img-fluid rounded shadow" style="max-width: 100%; height: auto;">
             <figcaption class="mt-2 text-muted">شکل 7 : مایگریشن</figcaption>
@@ -357,7 +356,7 @@ ENTRYPOINT ["dotnet", "{ProjectName}.dll"]
             <img src="../src/img/auto-migrate.png" alt="migrate" class="img-fluid rounded shadow" style="max-width: 100%; height: auto;">
             <figcaption class="mt-2 text-danger">نکته : اینجا این کد رو یه Program.cs اضافه میکنیم</figcaption>
           </figure> 
-      <pre><code>int maxRetries = 15;
+      <pre><code class="language-csharp">int maxRetries = 15;
 int delaySeconds = 5;
 
 for (int i = 0; i &lt; maxRetries; i++)
@@ -388,7 +387,7 @@ for (int i = 0; i &lt; maxRetries; i++)
             <figcaption class="mt-2 text-muted">نکته :<br>
             اینجا یک اکشن میسازیم که بشه به صورت دستی Migrate کرد</figcaption>
           </figure> 
-      <pre><code>[HttpGet("migrate")]
+      <pre><code class="language-csharp">[HttpGet("migrate")]
 [Route("/options/migrate")]
 public IActionResult MigrateDatabase()
 {
@@ -426,7 +425,7 @@ public IActionResult MigrateDatabase()
             <figcaption class="mt-2 text-danger">نکته :<br>
             اینجا داریم سرورمون رو کانفیگ میکنیم</figcaption>
           </figure> 
-    <pre><code class="language-yaml">sqlserver:
+    <pre><code class="language-docker">sqlserver:
   image: mcr.microsoft.com/mssql/server:2022-latest
   container_name: sqlserver
   environment:
@@ -479,7 +478,7 @@ public IActionResult MigrateDatabase()
     <figure class="text-center my-4">
             <img src="../src/img/docker-compose-5.png" alt="docker compose" class="img-fluid rounded shadow" style="max-width: 100%; height: auto;">
             <figcaption class="mt-2 text-danger">نکته : حتما ConnectionString رو اینجا بنویسید این هم نمونه اش :</figcaption>
-              <pre><code>ConnectionStrings__DefaultConnection=Server={ServerName};Database={DatabaseName};User=sa;Password={Password};Encrypt=false;TrustServerCertificate=true;MultipleActiveResultSets=true</code></pre>
+              <pre><code class="language-text" >ConnectionStrings__DefaultConnection=Server={ServerName};Database={DatabaseName};User=sa;Password={Password};Encrypt=false;TrustServerCertificate=true;MultipleActiveResultSets=true</code></pre>
             <figcaption class="mt-2 text-danger">
               
               نکته : {ServerName} همون نام سروری هست که توی همین پروژه تنطیم کردید<br>
@@ -532,7 +531,7 @@ public IActionResult MigrateDatabase()
       <ul>
         <li>خب ما فرض به این میگیرم که ما الان توی پروژه مون توی Vs Code هستیم</li>
         <li>اول از همه باید محدودیت Terminal رو برداریم با نوشتن این کد :
-        <pre><code>Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass</code></pre>
+        <pre><code class="language-powershell" >Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass</code></pre>
         <figure class="text-center my-4">
             <img src="../src/img/terminal-policy.png" alt="Terminal Policy" class="img-fluid rounded shadow" style="max-width: 100%; height: auto;">
             <figcaption class="mt-2 text-danger">نکته : معمولا خروجی خاصی قرار نیست ببینید</figcaption>
@@ -540,7 +539,7 @@ public IActionResult MigrateDatabase()
         </li>
         <li>می‌خوایم یدونه پروژه React.js درست کنیم
           خب با نوشتن دستور زیر خیلی راحت میتونیم این پروژه را بسازیم (به دلیل نصب پکیچ ها یکم طول میکشه):
-          <pre><code>npx create-react-app {ProjectName}</code></pre>
+          <pre><code class="language-powershell">npx create-react-app {ProjectName}</code></pre>
           <figure class="text-center my-4">
             <img src="../src/img/terminal-frontend.png" alt="جستوجو و انتخاب پروژه" class="img-fluid rounded shadow" style="max-width: 100%; height: auto;">
             <figcaption class="mt-2 text-danger">نکته : {ProjectName} نامیه که قراره برای پروژه تون انتخاب کنید <br>
@@ -560,7 +559,7 @@ public IActionResult MigrateDatabase()
     <section id="frontend-docker-connection" tabindex="0">
       <h2>فرانت اند - اتصال به داکر</h2>
       <p>خب ما از قبل فایل docker-compose رو داریم الان نیازه که یکسری تنظیمات اضافه کنیم و حتما فرانت اند وقتی لود بشه وقتی که بک اند ما لود شده باشه پس نیاز به کد زیر داریم :</p>
-      <pre><code>{ProjectName}:
+      <pre><code class="language-yml">{ProjectName}:
     build:
       context: ./{ProjectPath}
       dockerfile: Dockerfile
@@ -581,7 +580,7 @@ public IActionResult MigrateDatabase()
           </figure>
 
       <p>خود React.js برای شما فایل Dockerfile ساخته ولی اگر به هر دلیل به مشکل برخوردید این  کد رو امتحان کنید : </p>
-      <pre><code># Build Stage
+      <pre><code class="language-docker"># Build Stage
 FROM node:20 AS build
 WORKDIR /app
 COPY . .
@@ -600,13 +599,13 @@ EXPOSE 80
     <section id="frontend-backend-connection" tabindex="0">
       <h2>فرانت اند - اتصال به بک اند</h2>
       <p>خب ما الان میخوایم بریم که فراند اند رو به بک اند وصل کنیم برای این اتصال اول باید توی همون پوشه فراند اند یک فایل با نام <code>.env</code>بسازیم و کد زیر رو توش بنویسیم :</p>
-      <pre><code>REACT_APP_API_BASE=http://localhost:8080</code></pre>
+      <pre><code  class="language-jsx">REACT_APP_API_BASE=http://localhost:8080</code></pre>
       <figure class="text-center my-4">
             <img src="../src/img/env-2.png" alt="داکر کامپوز" class="img-fluid rounded shadow" style="max-width: 100%; height: auto;">
             <figcaption class="mt-2 text-danger">نکته : اینجا پورت 8080 پورت پروژه بک اند من هست شاید برای شما فرق داشته باشه بستگی داره توی فایل docker compose چی تنظیم کرده باشید</figcaption>
           </figure>
       <p>حالا دیگه اتصال انجام شد اگر هم خواستید کد Api بنویسید براش :</p>
-      <pre><code>
+      <pre><code class="language-jsx">
 import React, { useEffect, useState } from 'react';
 
 function App() {
@@ -642,7 +641,7 @@ export default App;
       معمولا سرور ها خیلی طول میکشند که استاندارد بشند برای اتصال از طریق MSSM و Backend باید به سرور زمان بدیم
       حتی امکان اینکه healthcheck رو هم دور بزنند هست
     </p>
-    <pre><code >Error: 18456, Severity: 14, State: 7.
+    <pre><code  class="language-text">Error: 18456, Severity: 14, State: 7.
 2025-07-23 10:15:06.17 Logon       Login failed for user 'sa'. Reason: An error occurred while evaluating the password. [CLIENT: 172.18.0.3]
  </code></pre>
   </section>
@@ -666,6 +665,16 @@ export default App;
   <script src="../src/js/zoom.js"></script>
   <script src="../src/js/partail.js"></script>
   <script src="../src/js/error.js"></script>
+  <!-- Prism CSS (مثل VS Code theme) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+<!-- Prism JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js"></script>
+
+<!-- اضافه کردن زبان‌ها -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-csharp.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-bash.min.js"></script>
+<script src="https://cdnjs.
 
 </body>
 </html>
